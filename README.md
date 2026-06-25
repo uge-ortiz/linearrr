@@ -1,45 +1,45 @@
 # linearrr
 
-Secuenciador MIDI lineal con locators y p-locks. App hermana de [rrresponseq](https://github.com/) — composición lineal de temas enteros estilo Yamaha QX3 / MMT-8 / MPC step recording.
+Linear MIDI sequencer with locators and p-locks. Sister app to [rrresponseq](https://github.com/) — full-song linear composition in the style of the Yamaha QX3 / MMT-8 / MPC step recording.
 
-- Step input y real-time recording
-- Locators navegables por resolución (1/1 a 1/128, dotted y triplets)
-- P-locks por evento (mantén nota + gira knob para editar)
-- Tracks MIDI + Sampler (audio engine interno con pitch shift, reverse, attack/release, gate)
-- Operaciones tracker-style sobre selección o bars: reverse, stretch, shift, vel_ramp, humanize, scale_quantize, thin, double_oct, legato, gate_scale, chop, sample_start, attack, release
-- Modal JJOS-style para todas las operaciones
-- Layout footer estilo QX3 JOB COMMAND TABLE
+- Step input and real-time recording
+- Locators navigable by resolution (1/1 to 1/128, dotted and triplets)
+- Per-event p-locks (hold a note + turn a knob to edit)
+- MIDI and Sampler tracks (internal audio engine with pitch shift, reverse, attack/release, gate)
+- Tracker-style operations over selection or bars: reverse, stretch, shift, vel_ramp, humanize, scale_quantize, thin, double_oct, legato, gate_scale, chop, sample_start, attack, release
+- JJOS-style modal for every operation
+- Footer layout inspired by the QX3 JOB COMMAND TABLE
 
 ## Stack
 
-Python + Flask + SSE + HTML inline. Sin dependencias frontend.
+Python + Flask + SSE + inline HTML. No frontend dependencies.
 
-## Requisitos
+## Requirements
 
 - Python 3.10+
-- macOS (probado), Linux (sin probar)
-- Opcional: controlador MIDI (Launchkey, nanoKONTROL, etc.)
+- macOS (tested), Linux (untested)
+- Optional: MIDI controller (Launchkey, nanoKONTROL, etc.)
 
-## Instalación
+## Install
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install flask python-rtmidi sounddevice soundfile numpy
 ```
 
-## Lanzar
+## Run
 
 ```bash
-./run.sh           # navegador por defecto
-./run_app.sh       # Chrome en modo --app (sin barras)
+./run.sh           # default browser
+./run_app.sh       # Chrome in --app mode (no chrome UI)
 ```
 
-Abre `http://localhost:5002`.
+Then open `http://localhost:5002`.
 
-## Configuración MIDI
+## MIDI configuration
 
-Edita `config.py` con tus puertos MIDI (`MIDI_OUT_PORT`, `MIDI_KB_PORT`, `NK_IN_PORT`).
+Edit `config.py` with your MIDI port names (`MIDI_OUT_PORT`, `MIDI_KB_PORT`, `NK_IN_PORT`).
 
-## Licencia
+## License
 
-[PolyForm Noncommercial 1.0.0](LICENSE.md) — uso, modificación y distribución permitidos **solo para fines no comerciales**. Para uso comercial, contactar al autor.
+[PolyForm Noncommercial 1.0.0](LICENSE.md) — use, modification and distribution are allowed **for noncommercial purposes only**. For commercial use, please contact the author.
