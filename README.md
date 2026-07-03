@@ -16,7 +16,7 @@ Python + Flask + SSE + inline HTML. No frontend dependencies.
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.10–3.12 (**do not use 3.13+** — `python-rtmidi` currently crashes on newer versions)
 - macOS (tested), Linux (untested)
 - Optional: MIDI controller (Launchkey, nanoKONTROL, etc.)
 
